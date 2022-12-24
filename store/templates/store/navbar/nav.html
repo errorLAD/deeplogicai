@@ -1,0 +1,45 @@
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-teal w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+      <div class="w3-right w3-hide-small">
+      {% if request.user.is_authenticated %}
+  
+          <a class=""  href="{% url 'logout' %}">
+            <button type="button" class="w3-bar-item w3-button w3-padding-large">Logout</button></a>
+       
+    {% else %}
+     
+        <a class="" href="{% url 'loginpage' %}">
+          <button class="w3-bar-item w3-button w3-padding-large" type="submit"><small>Login</small></button></a>
+     
+        <a class="" href="{% url 'register' %}">
+          <button class="w3-bar-item w3-button w3-padding-large" type="submit"><small>Register</small></button></a>
+    {% endif %}
+    </div>
+    
+  
+    </div>
+  </div>
+  
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <div id="navDemo" class="w3-bar-block w3-teal w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+      {% if request.user.is_authenticated %}
+  
+          <a class=""  href="{% url 'logout' %}">
+            <button type="button" class="w3-bar-item w3-button w3-padding-large">Logout</button></a>
+       
+    {% else %}
+     
+        <a class="" href="{% url 'loginpage' %}">
+          <button class="w3-bar-item w3-button w3-padding-large" type="submit"><small>Login</small></button></a>
+     
+        <a class="" href="{% url 'register' %}">
+          <button class="w3-bar-item w3-button w3-padding-large" type="submit"><small>Register</small></button></a>
+    {% endif %}
+  </div>
+  
+
+  

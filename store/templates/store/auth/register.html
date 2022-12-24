@@ -1,0 +1,105 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+
+
+
+<div class="container ">
+
+
+    <div class="w3-row w3-hide-small">
+        <br><br<br>
+        <div class="w3-col s2 w3-center">
+        </div>
+        <div class="w3-col s4">
+            <br><br> <br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="">
+                </div>
+    
+                <div class="form-group">
+                    <label for=""> <strong> username</strong></label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                        <label class="text-danger"> {{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="">  <strong>Email  </strong></label>
+                    {{form.email}}
+                     {% if form.errors.email %}
+                        <label class="text-danger"> {{ form.errors.email }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for=""> <strong>Password </strong></label>
+                    {{form.password1}}
+                     {% if form.errors.password1 %}
+                        <label class="text-danger"> {{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for=""> <strong>Confirm Password </strong></label>
+                    {{form.password2}}
+                     {% if form.errors.password2 %}
+                        <label class="text-danger"> {{ form.errors.password2 }}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn float-end shadow btn-danger px-4">Register</button>
+            </form>
+
+        </div>
+      </div>
+
+
+ 
+</div>
+
+<!--small -->
+<div class="container  w3-hide-large w3-hide-medium">
+    
+
+         <div class="px-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+        
+    
+                <div class="form-group">
+                    <label for=""> <strong> username</strong></label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                        <label class="text-danger"> {{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="">  <strong>Email  </strong></label>
+                    {{form.email}}
+                     {% if form.errors.email %}
+                        <label class="text-danger"> {{ form.errors.email }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for=""> <strong>Password </strong></label>
+                    {{form.password1}}
+                     {% if form.errors.password1 %}
+                        <label class="text-danger"> {{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for=""> <strong>Confirm Password </strong></label>
+                    {{form.password2}}
+                     {% if form.errors.password2 %}
+                        <label class="text-danger"> {{ form.errors.password2 }}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn float-end shadow btn-danger px-4">Register</button>
+            </form>
+            <br><br>  <br><br>  <br><br>
+         </div>
+     
+</div>
+{% endblock content %}

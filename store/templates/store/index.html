@@ -1,0 +1,27 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+<div class="px-48 ">
+    <br><br>
+    <div class="container mt-3">
+        <form  action="{% url 'home' %}" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="{{form.files_data.id_for_label}}">File</label>
+                {{form.files_data}}         
+              </div>
+              {% csrf_token %}
+            
+            <br>
+            <button type="submit" class="btn btn-primary w3-block">Submit</button>
+          </form>
+    
+            <br>
+           <a href="{% url 'view' %}"> <button class="btn btn-primary w3-block">Submit</button></a>
+    </div>
+
+</div>
+
+
+{% endblock content %}
